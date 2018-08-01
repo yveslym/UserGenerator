@@ -12,19 +12,19 @@ import CoreLocation
 import Fakery
 
 class User {
-    var firstName: String
-    var lastName: String
-    var email: String
-    var id: String
-    var title: String
-    var phoneNumber: String
-    var headline: String
-    var password: String
-    var username: String
-    var profilePic: String
+    let firstName: String
+    let lastName: String
+    let email: String
+    let id: String
+    let title: String
+    let phoneNumber: String
+    let headline: String
+    let password: String
+    let username: String
+    let profilePic: String
     var creditCard = [BankAccount]()
     var address = Address()
-    var prefix: String
+    let prefix: String
     /// generate user with dumy data
     init(){
        let faker = Faker(locale: "en")
@@ -75,6 +75,8 @@ class User {
                 completion(users)
             }
         }
+        
+       
     }
     
 }

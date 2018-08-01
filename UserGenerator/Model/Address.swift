@@ -9,6 +9,7 @@
 import Foundation
 import CoreLocation
 import Fakery
+
 struct Address{
     var city: String?
     var zipCode: Int?
