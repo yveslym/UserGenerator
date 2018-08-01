@@ -1,7 +1,7 @@
 # **USER GENERATOR**
 
 User generator is an awesome pod that help you to create 1 to infinite number of user
-with address, bank account, and profile image url using within a single line of code.
+with address, bank account, and profile image url within a single line of code.
 
 ## Model:
 ### User:
