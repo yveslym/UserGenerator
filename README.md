@@ -70,6 +70,11 @@ Address.generateMultipleAddress(number: 65, longitude:  -122.40641700, latitude:
             print(addresses)
         }
 ```
+## Install:
+
+```
+pod 'userGenerator'
+```
 
 ## Credit:
 My pod use [Fakery](https://github.com/vadymmarkov/Fakery) pod to create those dummy data, if you want more freedom, you can always visit their repository
