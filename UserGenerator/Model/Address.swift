@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 import Fakery
 
-struct Address{
+class AddressGen: NSObject {
     var city: String?
     var zipCode: Int?
     var street: String?
@@ -20,12 +20,13 @@ struct Address{
     var country: String?
     
     /// generate dumy address
-    init(){
+    override init(){
         let faker = Faker(locale: "en")
         self.street = faker.address.streetAddress(includeSecondary: true)
-        self.zipCode = Int(faker.address.postcode(stateAbbreviation: "CA") )
+        
+        self.zipCode = Int(faker.address.postcode())
         self.state = faker.address.state()
-        self.country = faker.address.country()
+        self.country = "United State"//faker.address.country()
         self.longitude =  faker.address.longitude()
         self.latitude = faker.address.latitude()
         self.city = faker.address.city()
@@ -33,13 +34,13 @@ struct Address{
     }
     
     /// generate address based on coordinate
-    static func generateAddress( longitude: Double, latitude: Double, radius: Double, completion: @escaping (Address)-> ()){
+    static func generateAddress( longitude: Double, latitude: Double, radius: Double, completion: @escaping (AddressGen)-> ()){
         let faker = Faker(locale: "en")
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let fakeAddr = faker.address.coordinate(inRadius: radius, fromCenter: coordinate)
         let location = CLLocation(latitude: fakeAddr.latitude, longitude: fakeAddr.longitude)
         
-        var address = Address()
+        var address = AddressGen()
         
         self.lookUpCurrentLocation(location: location) { (placeMark) in
             if placeMark != nil{
@@ -61,9 +62,9 @@ struct Address{
     /// generate multiple addresses based on coordinate
     
     static func generateMultipleAddress( number: Int, longitude: Double, latitude:
-        Double, radius: Double, completion: @escaping ([Address])-> ()){
+        Double, radius: Double, completion: @escaping ([AddressGen])-> ()){
         
-        var addresses = [Address]()
+        var addresses = [AddressGen]()
         
         let faker = Faker(locale: "en")
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
@@ -76,7 +77,7 @@ struct Address{
             
             let location = CLLocation(latitude: fakeAddr.latitude, longitude: fakeAddr.longitude)
             
-            var address = Address()
+            var address = AddressGen()
             
             self.lookUpCurrentLocation(location: location) { (placeMark) in
                 if placeMark != nil{

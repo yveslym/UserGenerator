@@ -11,7 +11,7 @@ import UIKit
 import CoreLocation
 import Fakery
 
-class User {
+class UserGen {
     let firstName: String
     let lastName: String
     let email: String
@@ -22,8 +22,8 @@ class User {
     let password: String
     let username: String
     let profilePic: String
-    var creditCard = [BankAccount]()
-    var address = Address()
+    var creditCard = [BankAccountGen]()
+    var address = AddressGen()
     let prefix: String
     /// generate user with dumy data
     init(){
@@ -37,7 +37,7 @@ class User {
         headline = faker.lorem.paragraph(sentencesAmount: number)
         password = faker.internet.password(minimumLength: 10, maximumLength: 15)
         username = faker.internet.username(separator: "_")
-        let bank = BankAccount()
+        let bank = BankAccountGen()
         creditCard.append(bank)
         id = UUID().uuidString
         prefix = faker.name.prefix()
@@ -46,27 +46,27 @@ class User {
     /// method to add multiple card
     func addNewCard(number: Int){
         for _ in 1...number{
-            creditCard.append(BankAccount())
+            creditCard.append(BankAccountGen())
         }
     }
     /// func to generate user with address based on coordinate and radius
-    static func generateUser( longitude: Double, latitude: Double, radius: Double, completion: @escaping(User) -> ()){
+    static func generateUser( longitude: Double, latitude: Double, radius: Double, completion: @escaping(UserGen) -> ()){
        
-        let user = User()
-        Address.generateAddress(longitude: longitude, latitude: latitude, radius: radius) { (address) in
+        let user = UserGen()
+        AddressGen.generateAddress(longitude: longitude, latitude: latitude, radius: radius) { (address) in
             user.address = address
             completion(user)
             }
     }
     /// Method to generate multiple user
-    static func generateMultipleUser( number: Int, longitude: Double, latitude: Double, radius: Double, completion: @escaping([User]) -> ()){
+    static func generateMultipleUser( number: Int, longitude: Double, latitude: Double, radius: Double, completion: @escaping([UserGen]) -> ()){
         
         let dg = DispatchGroup()
-        var users = [User]()
+        var users = [UserGen]()
         for _ in 0...number{
             dg.enter()
-        let user = User()
-        Address.generateAddress(longitude: longitude, latitude: latitude, radius: radius) { (address) in
+        let user = UserGen()
+        AddressGen.generateAddress(longitude: longitude, latitude: latitude, radius: radius) { (address) in
             user.address = address
             users.append(user)
             dg.leave()

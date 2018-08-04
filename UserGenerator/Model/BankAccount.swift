@@ -9,7 +9,7 @@
 import Foundation
 import Fakery
 
-struct BankAccount{
+struct BankAccountGen{
     let CarNumber: String
     let CardType: String
     let expirationDate: Date

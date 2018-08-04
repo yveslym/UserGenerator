@@ -11,6 +11,7 @@
 		20A20CA32111841000C59F1E /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A20CA22111841000C59F1E /* Address.swift */; };
 		20A20CA52111984200C59F1E /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A20CA42111984200C59F1E /* BankAccount.swift */; };
 		20A20CA72111AFE300C59F1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A20CA62111AFE300C59F1E /* AppDelegate.swift */; };
+		20A20CA9211628DE00C59F1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20A20CA8211628DE00C59F1E /* Main.storyboard */; };
 		82835186C299554C599FFAB3 /* Pods_UserGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2BB94F3B4C15A3A760C95D /* Pods_UserGenerator.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,6 +23,7 @@
 		20A20CA22111841000C59F1E /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		20A20CA42111984200C59F1E /* BankAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccount.swift; sourceTree = "<group>"; };
 		20A20CA62111AFE300C59F1E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		20A20CA8211628DE00C59F1E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6C2BB94F3B4C15A3A760C95D /* Pods_UserGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UserGenerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8996C49913DA7EC2BCEBDF5B /* Pods-UserGenerator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserGenerator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UserGenerator/Pods-UserGenerator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +74,7 @@
 				20A20CA22111841000C59F1E /* Address.swift */,
 				20A20CA42111984200C59F1E /* BankAccount.swift */,
 				20A20CA62111AFE300C59F1E /* AppDelegate.swift */,
+				20A20CA8211628DE00C59F1E /* Main.storyboard */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20A20CA9211628DE00C59F1E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
